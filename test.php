@@ -1,21 +1,21 @@
 <?php    
-if(isset($_POST['SubmitButton'])){ //check if form was submitted
-  $input = $_POST['inputText']; //get input text
-  $message = "Success! You entered: ".$input;
     
-
+	$value1 =  $_REQUEST['firstname'];
+	$value2 =  $_REQUEST['lastname'];
+	$value3 =  $_REQUEST['email'];
 //Connecting to sql db.
-$connect = mysqli_connect("SERVER NAME","USERNAME","PASSWORD","label");
+$mysqli = mysqli_connect('localhost','root','','test');
 //Sending form data to sql db.
-if($link === false){
+echo "CONNECT";
+if(!$mysqli){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
-$sql = "INSERT INTO persons (firstname, lastname, email) VALUES (firstname, lastname, email";
-if(mysqli_query($link, $sql)){
+$sql = "INSERT INTO testTable (firstname , lastname , email) VALUES ('$value1', '$value2', '$value3')";
+if(mysqli_query($mysqli, $sql)){
     echo "Records inserted successfully.";
 } else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
 }
-}
-mysqli_close($link);
+
+mysqli_close($mysqli);
 ?>
