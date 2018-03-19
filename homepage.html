@@ -16,50 +16,43 @@
   <body>
 
     <!-- insert your code here -->
-    <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-4 offset-md-4">
+  <div class="container">
+  	<div class="row h-100">
+	  	<div class="col-md-4  offset-md-4">
+          <img class="img-fluid" alt="Responsive image" src="BCLogo.png" />
+          <form role="form" >
+            <div class="form-group">
+              <label class = "sr-only" for="exampleInputEmail1" >
+                Email address
+              </label>
+              <input class="form-control" id="exampleInputEmail1" type="email" placeholder="Email" />
+            </div>
 
-      <h1 align = "center">
-        Boulder </br>
-        Connect
-      </h1>
+            <div class="form-group">
+              <label class = "sr-only" for="exampleInputPassword1">
+                Password
+              </label>
+              <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password" />
+            </div>
 
-      <form role="form" >
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">
+                Remember me
+              </label>
+            </div>
+            <button type="submit" class="btn btn-info">
+              Login
+            </button>
 
-				<div class="form-group">
-				  <label class = "sr-only" for="exampleInputEmail1" >
-						Email address
-				  </label>
-				<input class="form-control" id="exampleInputEmail1" type="email" placeholder="Email" />
-				</div>
-
-				<div class="form-group">
-					<label class = "sr-only" for="exampleInputPassword1">
-						Password
-					</label>
-					<input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password" />
-				</div>
-
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Remember me
-          </label>
-        </div>
-
-				<button type="submit" class="btn btn-info">
-					Login
-				</button>
-
-        <button type="button" class="btn btn-info"
-         onclick="location.href = 'groupinput.html';">
-					Make Profile
-				</button>
-
-			</form>
-		</div>
-	</div>
-</div>
+            <button type="button" class="btn btn-info"
+             onclick="location.href = 'groupinput.html';">
+              Make Profile
+            </button>
+          </form>
+		  </div>
+	  </div>
+  </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
