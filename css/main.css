@@ -18,5 +18,21 @@
   .btn:hover {
     background-color: pink;
     border-color:  pink;
+  }
 
+  .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #9b2c17;
+    background-color: transparent;
+    border-color: transparent transparent #9b2c17;
+    border-bottom: 4px solid !important;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .nav-tabs .nav-link {
+    border-color: #9b2c17;
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: #9b2c17;
+    font-size: 20px;
   }
