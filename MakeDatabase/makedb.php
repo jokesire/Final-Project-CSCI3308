@@ -27,7 +27,7 @@ CREATE TABLE `accountInfo`.`users`
     `email` VARCHAR(100) NOT NULL,
     `password` VARCHAR(100) NOT NULL,
     `hash` VARCHAR(32) NOT NULL,
-    `active` BOOL NOT NULL DEFAULT 0,
+
 PRIMARY KEY (`id`)
 );') or die($mysqli->error);
 
