@@ -2,7 +2,7 @@
 /* checks if user exists and password is correct */
 
 // Escape email for security
-$email = $mysqli->escape_string($_POST['email']);
+$email = $mysqli->real_escape_string($_POST['email']);
 $result = $mysqli->query("SELECT * FROM users WHERE email='$email'");
 
 if ( $result->num_rows == 0 ){ // User doesn't exist
