@@ -62,7 +62,7 @@ session_start();
             <div role="tabpanel" class="tab-pane fade in active" id = "login">
 
                 <h1>Welcome Back!</h1>
-            <form action="index.php" method= "post" autocomplete="off">
+            <form action="homepage.php" method= "post" autocomplete="off">
 
             <div class="form-group">
               <label class = "sr-only" for="email" >
@@ -89,7 +89,7 @@ session_start();
       <div role="tabpanel" class="tab-pane fade in active" id="signup">
         <h1>Sign Up for Free</h1>
 
-        <form action="index.php" method="post" autocomplete="off">
+        <form action="homepage.php" method="post" autocomplete="off">
 
         <div class = "form-group">
           <label class = "sr-only" for = "firstname">
@@ -142,6 +142,6 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    
+
   </body>
 </html>
