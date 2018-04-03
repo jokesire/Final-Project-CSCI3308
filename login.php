@@ -3,7 +3,7 @@
 
 // Escape email for security
 $email = $mysqli->real_escape_string($_POST['email']);
-$result = $mysqli->query("SELECT * FROM users WHERE email='$email'");
+$result = $mysqli->query("SELECT * FROM logininfo WHERE email='$email'");
 
 if ( $result->num_rows == 0 ){ // User doesn't exist
     $_SESSION['message'] = "User is not associated with that email! Please Try Again!";

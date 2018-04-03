@@ -19,7 +19,7 @@ $hash = $mysqli->real_escape_string( md5( rand(0,1000) ) );
 
 // Check if user with that email already exists
 //http://php.net/manual/en/mysqli.query.php
-$result = $mysqli->query("SELECT * FROM users WHERE email='$email'") or die($mysqli->error());
+$result = $mysqli->query("SELECT * FROM logininfo WHERE email='$email'") or die($mysqli->error());
 
 // We know user email exists if the rows returned are more than 0
 if ( $result->num_rows > 0 ) {
@@ -31,7 +31,7 @@ if ( $result->num_rows > 0 ) {
 else { // Email doesn't already exist in a database, proceed...
 
 
-    $sql = "INSERT INTO users (first_name, last_name, email, password, hash) "
+    $sql = "INSERT INTO logininfo (first_name, last_name, email, password, hash) "
             . "VALUES ('$first_name','$last_name','$email','$password', '$hash')";
 
     // Add user to the database
