@@ -13,13 +13,13 @@ if ($mysqli->connect_errno) {
 }
 
 //create the database
-if ( !$mysqli->query('CREATE DATABASE accountInfo') ) {
+if ( !$mysqli->query('CREATE DATABASE BoulderConnects') ) {
     printf("Errormessage: %s\n", $mysqli->error);
 }
 
 //create users table with all the fields
 $mysqli->query('
-CREATE TABLE `accountInfo`.`users`
+CREATE TABLE `BoulderConnects`.`LoginInfo`
 (
     `id` INT NOT NULL AUTO_INCREMENT,
     `first_name` VARCHAR(50) NOT NULL,
