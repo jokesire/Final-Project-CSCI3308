@@ -24,7 +24,7 @@ else { //  exists
         header("location: profile.php");
     }
     else {
-        $_SESSION['message'] = "Password you entered is incorrect! Please Try Again.";
-        header("location: homepage.php");
+
+
     }
 }
