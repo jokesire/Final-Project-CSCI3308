@@ -46,6 +46,15 @@ session_start();
 
           <img class="img-fluid" alt="Responsive image" src="BCLogo.png" />
 
+          <p>
+          <?php
+          if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ):
+              echo $_SESSION['message'];
+
+          endif;
+          ?>
+          </p>
+
             <ul class="nav nav-tabs" role="tablist">
               <li class="nav-item">
                 <a class="nav-link" href="#signup" role="tab" data-toggle="tab">Sign Up</a>
