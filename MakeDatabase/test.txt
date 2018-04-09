@@ -1,0 +1,26 @@
+INSERT INTO BoulderConnects.LoginInfo (first_name , last_name, password, email)
+VALUES ( "anna", "jane" ,"password1", "anna123@colorado.edu");
+INSERT INTO BoulderConnects.LoginInfo (first_name , last_name, password, email)
+VALUES ("billy", "joel" ,"password2", "billy456@colorado.edu");
+INSERT INTO BoulderConnects.LoginInfo (first_name , last_name, password, email)
+VALUES ("jean", "goel"   ,"password3", "jean891@colorado.edu");
+INSERT INTO BoulderConnects.LoginInfo (first_name , last_name, password, email)
+VALUES ("linny","jane" , "password4", "linny181@colorado.edu");
+INSERT INTO BoulderConnects.LoginInfo (first_name , last_name, password, email)
+VALUES ("jess", "jane" ,"password5", "jess585@colorado.edu");
+INSERT INTO BoulderConnects.LoginInfo (first_name , last_name, password, email)
+VALUES ("jackie", "jane" ,"password6    ", "jackie991@colorado.edu");
+INSERT INTO BoulderConnects.LoginInfo (first_name , last_name, password, email)
+VALUES ("nickie", "jane" ,"password7", "nickie141@colorado.edu");
+INSERT INTO BoulderConnects.LoginInfo (first_name , last_name, password, email)
+VALUES ("sully", "jane" ,"password8", "sully454@colorado.edu");
+INSERT INTO BoulderConnects.LoginInfo (first_name , last_name, password, email)
+ VALUES ("nemo", "jane" ,"password9", "nemo987@colorado.edu");
+INSERT INTO BoulderConnects.LoginInfo (first_name , last_name, password, email)
+ VALUES ("dory", "jane" ,"password10", "dory234@colorado.edu");
+INSERT INTO BoulderConnects.LoginInfo (first_name , last_name, password, email)
+ VALUES ("vanne", "jane" ,"password11", "vanne142@colorado.edu");
+INSERT INTO BoulderConnects.LoginInfo (first_name , last_name, password, email)
+ VALUES ("john", "jane" ,"password12", "john111@colorado.edu");
+INSERT INTO BoulderConnects.LoginInfo (first_name , last_name, password, email)
+ VALUES ("sammy", "jane" ,"password13", "sammy122@colorado.edu");
