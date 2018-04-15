@@ -32,8 +32,15 @@ else {
           <h1>Welcome</h1>
           <h2><?php echo $first_name.' '.$last_name; ?></h2>
           <p><?= $email ?></p>
-
+		  
+		  <a href="groupinput.php"><button class="button button-block" name="search"/>Find A Match</button></a>
+		  <br>
+		   <br>
+		    <br>
+			 <br>
+			 
           <a href="logout.php"><button class="button button-block" name="logout"/>Log Out</button></a>
+		   
 
     </div>
 </body>
