@@ -36,6 +36,44 @@ Day Met (mm-dd-yy):<br>
 Phone (###-###-####):<br>
 <input type="text" name="phone" >
 <br>
+<br>
+<br>
+<br>
+<br>
+
+
+<h1>Their Information</h1>
+ Name:<br>
+  <input type="text" name="tname" >
+  <br>
+  Nickname:<br>
+  <input type="text" name="tnickname" >
+  <br>
+  Major:<br>
+  <input type="text" name="tmajor" >
+  <br>
+  Location<br>
+   <select name="tlocationone">
+  <option value="tparty">Party</option>
+  <option value="tclass">Class</option>
+  <option value="tother">Other</option>
+</select>
+
+Where (What class, restaurant, party ect.):<br>
+
+<input type="text" name="tlocationtwo" >
+<br>
+Where (Misc Info):<br>
+<input type="text" name="tlocationthree" >
+<br>
+
+Day Met (mm-dd-yy):<br>
+<input type="text" name="tdate" >
+<br>
+
+Phone (###-###-####):<br>
+<input type="text" name="tphone" >
+<br>
 
 	
 	
