@@ -41,11 +41,12 @@ session_start();
     <!-- insert your code here -->
   <div class="container">
   	<div class="row h-100">
-	  	<div class="col-md-4  offset-md-4 form">
+	  	<div class="col-md-5">
 
 
-          <img class="img-fluid" alt="Responsive image" src="BCLogo.png" />
-
+          <img class="img-fluid" alt="Responsive image" src="feel.png"  />
+      </div>
+      <div class="col-md-7">
           <p>
           <?php
           if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ):
@@ -105,7 +106,7 @@ session_start();
             First Name<span class ="req">*</span>
           </label>
           <input type = "text" name = "firstname" class = "form-control"
-                 id = "firstname" placeholder = "firstname"/>
+                 id = "firstname" placeholder = "First Name"/>
         </div>
 
         <div class = "form-group">
@@ -113,7 +114,7 @@ session_start();
              Last Name<span class ="req">*</span>
           </label>
           <input type = "text" name = "lastname" class = "form-control"
-                  id = "lastname" placeholder = "lastname"/>
+                  id = "lastname" placeholder = "Last Name"/>
         </div>
 
         <div class = "form-group">
@@ -121,7 +122,7 @@ session_start();
              Email Address<span class ="req">*</span>
           </label>
           <input type = "email" name = "email" class = "form-control"
-                  id = "email" placeholder = "email"/>
+                  id = "email" placeholder = "Email"/>
        </div>
 
         <div class = "form-group">
@@ -129,7 +130,7 @@ session_start();
              New Password<span class ="req">*</span>
           </label>
           <input type = "password" name = "password" class = "form-control"
-                  id = "password" placeholder = "password"/>
+                  id = "password" placeholder = "Password"/>
         </div>
 
         <button type="submit" name ="register" class = "btn btn-info">
