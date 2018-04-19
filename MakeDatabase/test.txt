@@ -24,3 +24,52 @@ INSERT INTO BoulderConnects.LoginInfo (first_name , last_name, password, email)
  VALUES ("john", "jane" ,"password12", "john111@colorado.edu");
 INSERT INTO BoulderConnects.LoginInfo (first_name , last_name, password, email)
  VALUES ("sammy", "jane" ,"password13", "sammy122@colorado.edu");
+
+
+
+
+ CREATE TABLE `BoulderConnects`.`SelfInformation`
+ (
+     `email` VARCHAR(100) NOT NULL,
+     `name` VARCHAR(50) NOT NULL,
+     `nickname` VARCHAR(50) NOT NULL,
+     `major` VARCHAR(50) NOT NULL,
+     `locationtype` VARCHAR(100) ,
+     `locationdetail1` VARCHAR(100),
+     `locationdetail2` VARCHAR(100),
+     `daymet` DATE ,
+     `phonenumber` VARCHAR(50) NOT NULL,
+     `snapchatid` VARCHAR(50) NOT NULL,
+     `clothingcolor(s)` VARCHAR(200),
+     `id` INT NOT NULL,
+
+ PRIMARY KEY (`id`)
+ );
+
+ CREATE TABLE `BoulderConnects`.`SearchingFor` (
+   `name` VARCHAR(50),
+   `nickname` VARCHAR(50),
+   `major` VARCHAR(50),
+   `locationtype` VARCHAR(50),
+   `LocationDetail1` VARCHAR(100),
+   `LocationDetail2` VARCHAR(100),
+   `DayMet` VARCHAR(50),
+   `PhoneNumber` VARCHAR(50),
+   `SnapchatID` VARCHAR(50),
+   `ClothingColor(s)` VARCHAR(200),
+   `id` INT NOT NULL,
+
+ PRIMARY KEY (`id`)
+ );
+
+ CREATE TABLE `BoulderConnects`.`FoundMatches` (
+   `User1` VARCHAR(50),
+   `User2` VARCHAR(50),
+   `Email1` VARCHAR(50),
+   `Email2` VARCHAR(50),
+   `Phone1` VARCHAR(50),
+   `Phone2` VARCHAR(50),
+   `UniqueSearchID` INT NOT NULL AUTO_INCREMENT,
+
+ PRIMARY KEY (`UniqueSearchID`)
+ );

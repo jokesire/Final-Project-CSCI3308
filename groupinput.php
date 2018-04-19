@@ -1,10 +1,6 @@
 <html>
 
 
-
-
-
-
 <body>
 <form action="test.php">
 <h1>Your Information</h1>
@@ -75,10 +71,10 @@ Phone (###-###-####):<br>
 <input type="text" name="tphone" >
 <br>
 
-	
-	
+
+
 <input type="submit" value="Submit">
   <br>
-</form> 
+</form>
 </body>
 </html>
