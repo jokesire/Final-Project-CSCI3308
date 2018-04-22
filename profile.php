@@ -54,15 +54,6 @@ else {
     </div>
     <div class= "row 3">
       <div class="col-md-12">
-          <p>
-          <?php
-          if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ):
-              echo $_SESSION['message'];
-
-          endif;
-          ?>
-          </p>
-
             <ul class="nav nav-tabs" role="tablist">
               <li class="nav-item">
                 <a class="nav-link" href="#mymatches" role="tab" data-toggle="tab">My Matches</a>

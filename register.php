@@ -14,7 +14,7 @@ $_SESSION['last_name'] = $_POST['lastname'];
 $first_name = $mysqli->real_escape_string($_POST['firstname']);
 $last_name = $mysqli->real_escape_string($_POST['lastname']);
 $email = $mysqli->real_escape_string($_POST['email']);
-$password = $mysqli->real_escape_string(password_hash($_POST['password'], PASSWORD_BCRYPT));
+$password = $mysqli->real_escape_string($_POST['password']);
 
 
 // Check if user with that email already exists
