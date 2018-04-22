@@ -1,0 +1,46 @@
+Databases:
+
+CREATE TABLE FoundMatches (
+
+  email0 VARCHAR(50),
+  email1 VARCHAR(50),
+  name0 VARCHAR(50),
+  name1 VARCHAR(50)
+  
+
+
+);
+
+
+
+CREATE TABLE SearchingFor (
+  name VARCHAR(50),
+  nickname VARCHAR(50),
+  major VARCHAR(50),
+  locationtype VARCHAR(50),
+  LocationDetail1 VARCHAR(100),
+  LocationDetail2 VARCHAR(100),
+  DayMet VARCHAR(50),
+  PhoneNumber VARCHAR(50),
+  id INT NOT NULL auto_increment,
+
+PRIMARY KEY (id)
+);
+
+
+CREATE TABLE SelfInformation
+(
+    email VARCHAR(100) NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    nickname VARCHAR(50),
+    major VARCHAR(50),
+    locationtype VARCHAR(100) ,
+    locationdetail1 VARCHAR(100),
+    locationdetail2 VARCHAR(100),
+    daymet VARCHAR(50),
+    phonenumber VARCHAR(50),
+  
+    id INT NOT NULL auto_increment,
+
+PRIMARY KEY (`id`)
+);
