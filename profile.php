@@ -62,32 +62,27 @@ else {
             <!--*** TABBED CONTENT *** -->
             <div class = "tab-content">
 
-            <!--*** LOGIN PANEL *** -->
+            <!--*** My Matches *** -->
             <div role="tabpanel" class="tab-pane fade in active" id = "mymatches">
-            <form action="homepage.php" method= "post" autocomplete="off">
+            <ul>
+              <!--*** need array of matches for for loop to create list of matches, and a info panel pop out on click*** -->
+            <?php
+              for ($i = 1; $i <= count($matcharray); $i++)
+              {
+                echo '<li class="match-item">
+                      <a class="match-link" href="#match $i" data-toggle="tab">$first_name.' '.$last_name</a>
+                    </li>'
 
-            <div class="form-group">
-              <label class = "sr-only" for="email" >
-                Email address<span class="req">*</span>
-              </label>
-              <input type="email" name="email" class="form-control" id="email" placeholder="email" />
-            </div>
+                    '<div role="matchinfo" class="tab-pane fade in active" id = "match $i">
 
-            <div class="form-group">
-              <label class = "sr-only" for="password">
-                Password<span class="req">*</span>
-              </label>
-              <input type="password" name="password" class="form-control" id="password" placeholder="password" />
-            </div>
-
-            <button type="submit" name="login" class="btn btn-info">
-              Login
-            </button>
-
-          </form>
+                    </div>'
+                    ;
+              }
+            ?>
+            </ul>
       </div>
 
-      <!--*** SIGN-UP PANEL *** -->
+      <!--*** Find New Matches Panel *** -->
       <div role="tabpanel" class="tab-pane fade in active" id="findnewmatches">
         <form action="homepage.php" method="post" autocomplete="off">
 

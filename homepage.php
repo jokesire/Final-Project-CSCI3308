@@ -78,14 +78,14 @@ session_start();
               <label class = "sr-only" for="email" >
                 Email address<span class="req">*</span>
               </label>
-              <input type="email" name="email" class="form-control" id="email" placeholder="email" />
+              <input type="email" name="email" class="form-control" id="email" placeholder="Email" />
             </div>
 
             <div class="form-group">
               <label class = "sr-only" for="password">
                 Password<span class="req">*</span>
               </label>
-              <input type="password" name="password" class="form-control" id="password" placeholder="password" />
+              <input type="password" name="password" class="form-control" id="password" placeholder="Password" />
             </div>
 
             <button type="submit" name="login" class="btn btn-info">
