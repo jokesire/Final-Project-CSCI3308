@@ -1,11 +1,7 @@
-<!-- I WANT THIS TO EVENTUALLLY DISPLAY A USER PROFILE WITH THE PROFILESETUP.PHP
-INFORMATION USING HTML BOOTSTRAP 4 FOR FORMATTING -->
-
 <?php
 /* I want this to be the place where a new database is made
 containing more personalized information, avatars and connnections */
 session_start();
-
 // Check if user is logged in
 if ( $_SESSION['logged_in'] != 1 ) {
   $_SESSION['message'] = "Login before viewing profile!";
@@ -56,10 +52,10 @@ else {
       <div class="col-md-12">
             <ul class="nav nav-tabs" role="tablist">
               <li class="nav-item">
-                <a class="nav-link" href="#mymatches" role="tab" data-toggle="tab">My Matches</a>
+                <a class="nav-link" href="mymatches.php" role="tab" data-toggle="tab">My Matches</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#findnewmatches" role="tab" data-toggle="tab">Find New Matches</a>
+                <a class="nav-link" href="groupinput.php" role="tab" data-toggle="tab">Find New Matches</a>
               </li>
             </ul>
 
