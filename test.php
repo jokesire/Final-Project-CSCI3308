@@ -118,7 +118,7 @@ if ( $result->num_rows > 0 ){
 							$tname = $row['name'];
 							$sql = "INSERT INTO FoundMatches (email0 , email1 , name0 , name1 ) VALUES ( '$email', '$email1' , '$tvalue0' , '$tname'  )";
 							$sql1 = "INSERT INTO FoundMatches (email0 , email1 , name0 , name1 ) VALUES ( '$email1', '$email0' , '$tname' , '$tvalue0'  )";
-							if(mysqli_query($mysqli, $sql)) and mysqli_query($mysqli, $sql1)) {
+							if(mysqli_query($mysqli, $sql) and mysqli_query($mysqli, $sql1)) {
 								header("location: profile.php");
 								exit();
 							} else{
