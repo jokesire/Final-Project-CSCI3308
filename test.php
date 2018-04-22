@@ -1,5 +1,5 @@
-<?php    
-    
+<?php
+
 	$value1 =  $_REQUEST['nickname'];
 	$value2 =  $_REQUEST['major'];
 	$value3 =  $_REQUEST['locationone'];
@@ -7,7 +7,7 @@
 	$value5 =  $_REQUEST['locationthree'];
 	$value6 =  $_REQUEST['date'];
 	$value7 =  $_REQUEST['phone'];
-	
+
 	$tvalue0 =  $_REQUEST['tname'];
 	$tvalue1 =  $_REQUEST['tnickname'];
 	$tvalue2 =  $_REQUEST['tmajor'];
@@ -31,12 +31,12 @@ while($row = $id->fetch_assoc() ){
       $index = $row['id'] + 1 ;
 }
 
- 
+
 $result = $mysqli->query("SELECT * FROM SelfInformation WHERE major='$tvalue2'");
 
 
 if ( $result->num_rows > 0 ){
-	
+
 	while($row = $id->fetch_assoc() ){
 		$score = 1;
 		if('$value1' == $row['nickname']){
@@ -57,12 +57,11 @@ if ( $result->num_rows > 0 ){
 		if('$value7' == $row['phonenumber']){
 			$score = $score + 1;
 		}
-		
+
       $index = $row['id'] + 1 ;
 }
-	
+
 }
-	
 
 
 
@@ -79,7 +78,8 @@ if ( $result->num_rows > 0 ){
 
 
 
-	
+
+
 
 $sql = "INSERT INTO SelfInformation (email , name , nickname , major , locationtype , locationdetail1 , locationdetail2  , daymet , phonenumber , id) VALUES ('1' , '2','$value1', '$value2', '$value3','$value4', '$value5', '$value6' , '$value7' , $index)";
 if(mysqli_query($mysqli, $sql)){
@@ -99,9 +99,9 @@ $result = $mysqli->query("SELECT * FROM SelfInformation WHERE major='$tvalue2'")
 
 
 if ( $result->num_rows > 0 ){
-	
+
 	print("HELLO");
-	
+
 }
 print("NO");
 
