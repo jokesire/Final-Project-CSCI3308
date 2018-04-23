@@ -1,7 +1,11 @@
 <?php
+if(!isset($_SESSION)) 
+    {
+      ob_start();
+      session_start(); 
+    }
 /* I want this to be the place where a new database is made
 containing more personalized information, avatars and connnections */
-session_start();
 // Check if user is logged in
 if ( $_SESSION['logged_in'] != 1 ) {
   $_SESSION['message'] = "Login before viewing profile!";
@@ -55,22 +59,20 @@ else {
                 <a class="nav-link" href="mymatches.php" role="tab" data-toggle="tab">My Matches</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="groupinput.php" role="tab" data-toggle="tab">Find New Matches</a>
+                <a class="nav-link" href="#findnewmatches" role="tab" data-toggle="tab">Find New Matches</a>
               </li>
             </ul>
-
             <!--*** TABBED CONTENT *** -->
-            <div class = "tab-content">
+            <div class = "tab-content" class>
 
             <!--*** My Matches *** -->
-            <div role="tabpanel" class="tab-pane fade in active" id = "mymatches">
+            <!--<div role="tabpanel" class="tab-pane fade in active" id = "mymatches">
             <ul>
-              <!--*** need array of matches for for loop to create list of matches, and a info panel pop out on click*** -->
-            <?php
-              for ($i = 1; $i <= count($matcharray); $i++)
+              <!*** need array of matches for for loop to create list of matches, and a info panel pop out on click    
+            
+            for ($i = 1; $i <= count($matcharray); $i++)
               {
-                echo '<li class="match-item">
-                      <a class="match-link" href="#match $i" data-toggle="tab">$first_name.' '.$last_name</a>
+                echo '<li class="match-item"> <a class="match-link" href="#match $i" data-toggle="tab">$first_name.' '.$last_name</a>
                     </li>'
 
                     '<div role="matchinfo" class="tab-pane fade in active" id = "match $i">
@@ -79,54 +81,64 @@ else {
                     ;
               }
             ?>
+           
+            
+        
             </ul>
-      </div>
+      </div> 
+      -->
 
       <!--*** Find New Matches Panel *** -->
-      <div role="tabpanel" class="tab-pane fade in active" id="findnewmatches">
-        <form action="homepage.php" method="post" autocomplete="off">
 
-        <div class = "form-group">
-          <label class = "sr-only" for = "firstname">
-            First Name<span class ="req">*</span>
-          </label>
-          <input type = "text" name = "firstname" class = "form-control"
-                 id = "firstname" placeholder = "First Name"/>
-        </div>
+            <div role="tabpanel" class="col-md-6" class="tab-pane fade in active" id="findnewmatches">
+            <h1>Their Information</h1>
+            <form action="profile.php" method="post" autocomplete="off">
 
-        <div class = "form-group">
-          <label class = "sr-only" for = "lastname">
-             Last Name<span class ="req">*</span>
-          </label>
-          <input type = "text" name = "lastname" class = "form-control"
-                  id = "lastname" placeholder = "Last Name"/>
-        </div>
+            Name:<br>
+            <input type="text" name="tname" placeholder="Name">
+            <br>
+            Nickname:<br>
+            <input type="text" name="tnickname" placeholder="Nickname">
+            <br>
+            Major:<br>
+            <input type="text" name="tmajor" placeholder="Major">
+            <br>
+            Location<br>
+            <select name="tlocationone">
+            <option value="tparty">Party</option>
+            <option value="tclass">Class</option>
+            <option value="tother">Other</option>
+            </select>
+            <br>
+            Where (What class, restaurant, party ect.):<br>
 
-        <div class = "form-group">
-          <label class = "sr-only" for = "email">
-             Email Address<span class ="req">*</span>
-          </label>
-          <input type = "email" name = "email" class = "form-control"
-                  id = "email" placeholder = "Email"/>
-       </div>
+            <input type="text" name="tlocationtwo" >
+            <br>
+            Where (Misc Info):<br>
+            <input type="text" name="tlocationthree" >
+            <br>
 
-        <div class = "form-group">
-          <label class = "sr-only" for = "password">
-             New Password<span class ="req">*</span>
-          </label>
-          <input type = "password" name = "password" class = "form-control"
-                  id = "password" placeholder = "Password"/>
-        </div>
+            Day Met (mm-dd-yy):<br>
+            <input type="text" name="tdate" >
+            <br>
 
-        <button type="submit" name ="register" class = "btn btn-info">
-          Register
-        </button>
-
-      </form>
-
-    </div>
+            Phone (###-###-####):<br>
+            <input type="text" name="tphone" >
+            <br>
+            <input type="submit" value="Submit">
+            <br>
+            </form>
+            </div>
 
     </div>
   </div>
+</div>
+</div>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
 </body>
 </html>
