@@ -1,11 +1,11 @@
 <?php
 
 //connection variables
-$host = 'localhost';
+$host = '127.0.0.1';
 $user = 'root';
 //Just comment out my password if you want to test on you machine
 //So we don't have
-$password = 'Qn9tvCerg4xxfqpn'; //DEVANS LOCAL PW
+$password = 'aekdb'; //DEVANS LOCAL PW
 
 
 //create mysql connection
