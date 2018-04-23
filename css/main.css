@@ -32,13 +32,20 @@
     color: black;
     background-color: white;
     border-color: transparent transparent #9b2c17;
-    border-bottom: 4px solid !important;
     font-size: 20px;
     font-weight: bold;
+  }
+  .tab-content{
+    background: rgba(0,0,0,.5);
+    background-opacity: 50%;
+    border-color: transparent transparent #9b2c17;
+    border-radius: 25px;
+    color: black;
   }
   .nav-tabs .nav-link{
     border-color: #9b2c17;
     border: 1px solid transparent;
+    border-bottom: 0px;
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
     color: white;

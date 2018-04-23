@@ -1,11 +1,12 @@
-<!-- THIS ISN'T WORKING RIGHT NOW I WANT IT TO RETURN YOU TO HOMEPAGE WITH A LOGGED
-OFF MESSSAGE -->
-
-
-
 <?php
-/* Log out process, unsets and destroys session variables */
-session_start();
+if(!isset($_SESSION)) 
+    {
+    	session_start();
+    	ob_start(); 
+    }
 session_unset();
 session_destroy();
 header("location: homepage.php");
+exit();
+?>
+<!-- Log out process, unsets and destroys session variables -->

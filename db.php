@@ -1,6 +1,6 @@
 <?php
 /* Database connection settings */
-$host = 'localhost';
+$host = '127.0.0.1';
 $user = 'root';
 $pass = '$SQ9184194606';
 $db = 'BoulderConnects';

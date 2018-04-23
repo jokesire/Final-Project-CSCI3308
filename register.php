@@ -1,12 +1,13 @@
 <?php
+$_SESSION['email'] = $_POST['email'];
+$_SESSION['first_name'] = $_POST['firstname'];
+$_SESSION['last_name'] = $_POST['lastname'];
+
 /* Registration process, inserts user info into the database
    and sends account confirmation email message
  */
 
 // Set session variables to be used on profile.php page
-$_SESSION['email'] = $_POST['email'];
-$_SESSION['first_name'] = $_POST['firstname'];
-$_SESSION['last_name'] = $_POST['lastname'];
 
 
 // Escape all $_POST variables to protect against SQL injections
@@ -37,11 +38,8 @@ else { // Email doesn't already exist in a database, proceed...
 
     // Add user to the database
     if ( $mysqli->query($sql) ){
-
-        $_SESSION['logged_in'] = true; // So we know the user has logged in
-
-        header("location: profile.php");
-
+        $_SESSION['logged_in'] = true;
+        header("location: profilesetup.php");
     }
 
     else {
