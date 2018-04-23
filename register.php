@@ -8,6 +8,7 @@ $_SESSION['email'] = $_POST['email'];
 $_SESSION['first_name'] = $_POST['firstname'];
 $_SESSION['last_name'] = $_POST['lastname'];
 
+
 // Escape all $_POST variables to protect against SQL injections
 //http://php.net/manual/en/mysqli.construct.php
 //http://php.net/manual/en/mysqli.real-escape-string.php
@@ -39,7 +40,7 @@ else { // Email doesn't already exist in a database, proceed...
 
         $_SESSION['logged_in'] = true; // So we know the user has logged in
 
-        header("location: profilesetup.php");
+        header("location: profile.php");
 
     }
 
