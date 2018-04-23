@@ -34,15 +34,19 @@ else {
           <img class="img-fluid" alt="Responsive image" src="feel.png"  />
       </div>
       <div class= "col-md-3">
-          <img class="img-profile" alt="ProfilePicture" src="profile.png"  />
+          <form method="POST" action="upload.php" enctype="multipart/form-data">
+		<label for="file"> Pick a file :  </label>
+		<input type="file" name ="file"> 
+		<input type="submit" value = "Upload">
+	</form>
       </div>
       <div class="col-md-4">
 
           <h1><?php echo $first_name.' '.$last_name; ?></h1>
           <p><?= $email ?></p>
-          <h4>instagram</h4>
-          <h4>colledge</h4>
-          <h4>grade</h4>
+          <h4>Instagram</h4>
+          <h4>University Name</h4>
+          <h4>Year in School</h4>
 
           <a href="logout.php"><button class="button button-block" name="logout"/>Log Out</button></a>
 
@@ -66,21 +70,10 @@ else {
             <div role="tabpanel" class="tab-pane fade in active" id = "mymatches">
             <ul>
               <!--*** need array of matches for for loop to create list of matches, and a info panel pop out on click*** -->
-            <?php
-              for ($i = 1; $i <= count($matcharray); $i++)
-              {
-                echo '<li class="match-item">
-                      <a class="match-link" href="#match $i" data-toggle="tab">$first_name.' '.$last_name</a>
-                    </li>'
-
-                    '<div role="matchinfo" class="tab-pane fade in active" id = "match $i">
-
-                    </div>'
-                    ;
-              }
-            ?>
+            
             </ul>
-      </div>
+      </div
+
 
       <!--*** Find New Matches Panel *** -->
       <div role="tabpanel" class="tab-pane fade in active" id="findnewmatches">
@@ -89,7 +82,7 @@ else {
         <div class = "form-group">
           <label class = "sr-only" for = "firstname">
             First Name<span class ="req">*</span>
-          </label>
+     >     </label>
           <input type = "text" name = "firstname" class = "form-control"
                  id = "firstname" placeholder = "First Name"/>
         </div>

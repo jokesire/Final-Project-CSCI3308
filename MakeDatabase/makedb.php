@@ -5,7 +5,7 @@ $host = 'localhost';
 $user = 'root';
 //Just comment out my password if you want to test on you machine
 //So we don't have
-$password = 'Qn9tvCerg4xxfqpn'; //DEVANS LOCAL PW
+$password = '$SQ9184194606'; //DEVANS LOCAL PW
 
 
 //create mysql connection
