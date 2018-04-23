@@ -9,6 +9,7 @@ $_SESSION['last_name'] = $_POST['lastname'];
 
 // Set session variables to be used on profile.php page
 
+
 // Escape all $_POST variables to protect against SQL injections
 //http://php.net/manual/en/mysqli.construct.php
 //http://php.net/manual/en/mysqli.real-escape-string.php
@@ -37,10 +38,8 @@ else { // Email doesn't already exist in a database, proceed...
 
     // Add user to the database
     if ( $mysqli->query($sql) ){
-
         $_SESSION['logged_in'] = true;
         header("location: profilesetup.php");
-
     }
 
     else {

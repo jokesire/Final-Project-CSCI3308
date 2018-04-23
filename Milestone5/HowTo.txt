@@ -1,0 +1,14 @@
+For our automated tests we used a test suite called Selenium, which basically
+allows you to record your mouse and keyboard actions within a website. In
+other words it emulates a users actions that were prerecorded. The file
+type produced a .side file. To begin using Selenium download the browser
+extension Selenium IDE found on Selenium homepage. Next, set up our test
+database MakeDB.sql which can be found in the makedatabase folder in our
+github directory. Then start of MySQL server and your local Web Server that
+can run PhP. Navigate to the homepage.php page and open the Selenium extension
+from the browser application bar. Select the open project button in the upper
+right hand corner of Selenium application and open AutomatedTests.side. Make
+sure that each tests target matches the directory your local server is in if
+not change it. Proceed to run each test, and actions should be emulated on the
+webpage the name of each test is representative of the goal we want and the
+running of the test will show us the result of the given condition.

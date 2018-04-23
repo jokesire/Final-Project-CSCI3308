@@ -30,9 +30,10 @@
     $last_name = $_SESSION['last_name'];
     $email = $_SESSION['email'];
 //Connecting to sql db.
-$mysqli = mysqli_connect('localhost','root','','test');
+$mysqli = mysqli_connect('localhost','root','Qn9tvCerg4xxfqpn','BoulderConnect')
+// $mysqli = mysqli_connect('localhost','root','','test');
 //Sending form data to sql db.
-echo "CONNECT";
+//echo "CONNECT";
 if(!$mysqli){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
