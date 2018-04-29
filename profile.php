@@ -4,6 +4,7 @@ if(!isset($_SESSION))
       ob_start();
       session_start();
     }
+require 'db.php';
 /* I want this to be the place where a new database is made
 containing more personalized information, avatars and connnections */
 // Check if user is logged in
@@ -29,6 +30,33 @@ else {
   <?php include 'style/css/css.html'; ?>
 </head>
 
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+    if (isset($_POST['addevent'])) { //user logging in
+
+        require 'addevent.php';
+
+    }
+
+    elseif (isset($_POST['findmatch'])) { //user registering
+
+        require 'findmatches.php';
+
+    }
+
+    elseif (isset($_POST['mymatches'])) { //user registering
+
+        require 'mymatches.php';
+
+    }
+
+}
+
+
+
+?>
+
 <body>
   <div class ="container">
     <div class="row">
@@ -43,6 +71,12 @@ else {
 	</form>
       </div>
       <div class="col-md-4" id="nameplate">
+        <?php
+        if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ):
+            echo $_SESSION['message'];
+
+        endif;
+        ?>
 
           <h1><?php echo $first_name.' '.$last_name; ?> <h4><?= $email ?></h4></h1>
 
@@ -79,6 +113,18 @@ else {
       <h1>Event Information:</h1>
 
       <div class = "form-group">
+        <input  type = "hidden" name = "firstname" class = "form-control" id = "firstname" value = "<?php echo htmlspecialchars($first_name); ?>" />
+      </div>
+
+      <div class = "form-group">
+        <input  type = "hidden" name = "lastname" class = "form-control" id = "lastname" value = "<?php echo htmlspecialchars($last_name); ?>" />
+      </div>
+
+      <div class = "form-group">
+        <input  type = "hidden" name = "email" class = "form-control" id = "email" value = "<?php htmlspecialchars($email) ;?>" />
+      </div>
+
+      <div class = "form-group">
         <label  for = "eventname">
           Event Name:
         </label>
@@ -90,7 +136,7 @@ else {
       <div class="form-group">
         <label for="date" class="col-2 col-form-label">Date</label>
         <div class="col-5">
-          <input class="form-control" type="date" value="2011-08-19" id="date">
+          <input class="form-control" name="date" type="date" value="2011-08-19" id="date">
         </div>
       </div>
 
@@ -119,7 +165,7 @@ else {
           Location Description:
         </label>
       <div class="col-5">
-        <textarea type = "text" name = "eventname" class = "form-control" id = "eventname" rows ="3"> </textarea>
+        <textarea type = "text" name = "locationdescription" class = "form-control" id = "locationdescription" rows ="3"> </textarea>
       </div>
       </div>
 
@@ -139,7 +185,7 @@ else {
           Nickname:
         </label>
         <div class = "col-5">
-        <input type = "text" name = "nickname" class = "form-control" id = "nickname" />
+        <input type = "text" name = "nickname" class = "form-control" id = "nickname" >
         </div>
       </div>
 
@@ -188,8 +234,8 @@ else {
           What color was your hair?
         </label>
         <div class = "col-5">
-        <select type = "text" name = "hair" class = "form-control"
-        id = "hair" placeholder = "hair"/>
+        <select type = "text" name = "haircolor" class = "form-control"
+        id = "haircolor"/>
           <option>Bonde</option>
           <option>Brunette</option>
           <option>Black</option>
@@ -240,10 +286,132 @@ else {
         </div>
       </div>
       <button type="submit" name ="addevent" class = "btn btn-info">
-        Add
+        Add Event
       </button>
     </div>
 <!-- END OF ADD EVENT PANEL -->
+<!-- ********************************************************************************* -->
+<!-- FIND MATCH PANEL -->
+<div role="tabpanel"  class="tab-pane fade in active" id="findmatch">
+</br>
+<h5>Put in as much information as possible. </br> Anything that does not apply leave blank.</h5>
+
+<form action="profile.php" method="post" autocomplete="off"></br>
+<h1>Select which Event you met person!</h1>
+
+
+
+<h1>Their Information:</h1>
+<div class = "form-group">
+  <label  for = "nickname">
+    Did they go by a nickname:
+  </label>
+  <div class = "col-5">
+  <input type = "text" name = "nickname" class = "form-control" id = "nickname" />
+  </div>
+</div>
+
+<div class = "form-group"  >
+  <label for = "hat">
+    Wearing a Hat?
+  </label>
+  <div class = "col-5">
+  <select type = "text" name = "hat" class = "form-control" id = "hat" />
+    <option>yes</option>
+    <option>no</option>
+  </select>
+  </div>
+</div>
+
+<div class = "form-group"  >
+  <label for = "glasses">
+    Wearing glasses?
+  </label>
+  <div class = "col-5">
+  <select type = "text" name = "glasses" class = "form-control"
+  id = "glasses" placeholder = "glasses"/>
+    <option>yes</option>
+    <option>no</option>
+  </select>
+  </div>
+</div>
+
+<div class = "form-group"  >
+  <label for = "hair">
+    How did you wear your hair?
+  </label>
+  <div class = "col-5">
+  <select type = "text" name = "hair" class = "form-control"
+  id = "hair" placeholder = "hair"/>
+    <option>Ponytail</option>
+    <option>Bun</option>
+    <option>Down:Above Shoulders</option>
+    <option>Down:Below Shoulders</option>
+  </select>
+  </div>
+</div>
+
+<div class = "form-group"  >
+  <label for = "haircolor">
+    What color was your hair?
+  </label>
+  <div class = "col-5">
+  <select type = "text" name = "hair" class = "form-control"
+  id = "hair" placeholder = "hair"/>
+    <option>Bonde</option>
+    <option>Brunette</option>
+    <option>Black</option>
+    <option>Red</option>
+    <option>Unnatral</option>
+  </select>
+  </div>
+</div>
+
+<div class = "form-group"  >
+  <label for = "shirt">
+    What kind of shirt were you wearing?
+  </label>
+  <div class = "col-5">
+  <select type = "text" name = "shirt" class = "form-control"
+  id = "shirt" placeholder = "shirt"/>
+    <option>T-shirt</option>
+    <option>Blouse</option>
+    <option>Suit</option>
+    <option>Dress</option>
+    <option>Pollo</option>
+    <option>Tank Top</option>
+    <option>Long Sleeve</option>
+    <option>Costume</option>
+  </select>
+  </div>
+</div>
+
+<div class = "form-group"  >
+  <label for = "shirtcolor">
+    What kind of shirt were you wearing?
+  </label>
+  <div class = "col-5">
+  <select type = "text" name = "shirtcolor" class = "form-control"
+  id = "shirtcolor" placeholder = "shirtcolor"/>
+    <option>Black</option>
+    <option>Brown</option>
+    <option>White/Grey</option>
+    <option>Purple</option>
+    <option>Red</option>
+    <option>Blue</option>
+    <option>Green</option>
+    <option>Yellow</option>
+    <option>Purple</option>
+    <option>Pink</option>
+    <option>Patterned</option>
+  </select>
+  </div>
+</div>
+<button type="submit" name ="addevent" class = "btn btn-info">
+  Add Event
+</button>
+</div>
+<!-- END OF FIND MATCH PANEL -->
   </div>
 </div>
 </div>

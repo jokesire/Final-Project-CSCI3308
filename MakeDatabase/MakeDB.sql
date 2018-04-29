@@ -1,3 +1,13 @@
+-- OLD USE DB.SQL!!!!!!!
+-- OLD USE DB.SQL!!!!!!!
+-- OLD USE DB.SQL!!!!!!!
+-- OLD USE DB.SQL!!!!!!!
+-- OLD USE DB.SQL!!!!!!!
+-- OLD USE DB.SQL!!!!!!!
+
+
+
+
 CREATE SCHEMA `boulderconnects` ;
 
 CREATE TABLE `BoulderConnects`.`LoginInfo`
@@ -98,7 +108,7 @@ INSERT INTO BoulderConnects.SearchingFor ( name , locationtype , LocationDetail1
 VALUES ("Paul", "Party", "House" , "Sara's House" , "April 7th" , "red"  );
 INSERT INTO BoulderConnects.SearchingFor ( name , locationtype, LocationDetail1, DayMet, PhoneNumber, ClothingColor)
 VALUES ("Joe", "Other", "Pearl Street" , "April 4th" , "303-555-5556" ,  "green" );
-INSERT INTO BoulderConnects.SearchingFor  ( name , locationtype, LocationDetail1, SnapChatID, ClothingColor) 
+INSERT INTO BoulderConnects.SearchingFor  ( name , locationtype, LocationDetail1, SnapChatID, ClothingColor)
 VALUES ("Sarah", "Other", "Illegal Pete's" , "sarasnap" ,  "white"  );
 INSERT INTO BoulderConnects.SearchingFor ( name , locationtype, LocationDetail1, SnapChatID, ClothingColor)
 VALUES ("Amanda", "Party", "Frat" , "amanda_snap" ,  "silver" );
