@@ -179,7 +179,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
       </div>
 
 
-      <h1>Personal Information:</h1>
+      <!-- <h1>Personal Information:</h1> -->
       <div class = "form-group">
         <label  for = "nickname">
           Nickname:
@@ -236,7 +236,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         <div class = "col-5">
         <select type = "text" name = "haircolor" class = "form-control"
         id = "haircolor"/>
-          <option>Bonde</option>
+          <option>Blonde</option>
           <option>Brunette</option>
           <option>Black</option>
           <option>Red</option>
@@ -303,6 +303,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 <h1>Their Information:</h1>
 <div class = "form-group">
+  <label  for = "firstname">
+    Do you know their firstname:
+  </label>
+  <div class = "col-5">
+  <input type = "text" name = "nickname" class = "form-control" id = "nickname" />
+  </div>
+</div>
+
+<div class = "form-group">
+  <label  for = "nickname">
+    Did you know their lastname:
+  </label>
+  <div class = "col-5">
+  <input type = "text" name = "nickname" class = "form-control" id = "nickname" />
+  </div>
+</div>
+
+<div class = "form-group">
   <label  for = "nickname">
     Did they go by a nickname:
   </label>
@@ -313,7 +331,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 <div class = "form-group"  >
   <label for = "hat">
-    Wearing a Hat?
+    Were they wearing a Hat?
   </label>
   <div class = "col-5">
   <select type = "text" name = "hat" class = "form-control" id = "hat" />
@@ -325,7 +343,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 <div class = "form-group"  >
   <label for = "glasses">
-    Wearing glasses?
+    Were they wearing glasses?
   </label>
   <div class = "col-5">
   <select type = "text" name = "glasses" class = "form-control"
@@ -338,7 +356,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 <div class = "form-group"  >
   <label for = "hair">
-    How did you wear your hair?
+    How did they wear their hair?
   </label>
   <div class = "col-5">
   <select type = "text" name = "hair" class = "form-control"
@@ -353,12 +371,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 <div class = "form-group"  >
   <label for = "haircolor">
-    What color was your hair?
+    What color was their hair?
   </label>
   <div class = "col-5">
   <select type = "text" name = "hair" class = "form-control"
   id = "hair" placeholder = "hair"/>
-    <option>Bonde</option>
+    <option>Blonde</option>
     <option>Brunette</option>
     <option>Black</option>
     <option>Red</option>
@@ -369,7 +387,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 <div class = "form-group"  >
   <label for = "shirt">
-    What kind of shirt were you wearing?
+    What kind of shirt were they wearing?
   </label>
   <div class = "col-5">
   <select type = "text" name = "shirt" class = "form-control"
@@ -388,7 +406,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 <div class = "form-group"  >
   <label for = "shirtcolor">
-    What kind of shirt were you wearing?
+    What kind of shirt were they wearing?
   </label>
   <div class = "col-5">
   <select type = "text" name = "shirtcolor" class = "form-control"

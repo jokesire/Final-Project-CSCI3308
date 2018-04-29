@@ -48,16 +48,16 @@ $shirtcolor =  $mysqli->real_escape_string($_POST['shirtcolor']);
 // Check if user with that email already exists
 //http://php.net/manual/en/mysqli.query.php
 
-    $sql = "INSERT INTO myevents (first_name, last_name, email, eventname, date, eventtype, locationdescription,additionalinfo ,nickname, hat, glasses,hair,haircolor, shirt, shirtcolor) "
+    $sql = "INSERT INTO activesearches (first_name, last_name, email, eventname, date, eventtype, locationdescription,additionalinfo ,nickname, hat, glasses,hair,haircolor, shirt, shirtcolor) "
             . "VALUES ('$firstname', '$lastname', '$email', '$eventname', '$date', '$eventtype', '$locationdescription','$additionalinfo','$nickname', '$hat', '$glasses','$hair','$haircolor', '$shirt', '$shirtcolor')";
 
     // Add user to the database
     if ( $mysqli->query($sql) ){
-        $_SESSION['message'] = "Event Added";
+        $_SESSION['message'] = "Search Added";
         header("location: profile.php");
     }
 
     else {
-        $_SESSION['message'] = 'Add Event Failed!';
+        $_SESSION['message'] = 'Add Search Failed!';
         header("location: profile.php");
     }
