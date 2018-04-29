@@ -32,8 +32,6 @@ if ( $result->num_rows > 0 ) {
 }
 else { // Email doesn't already exist in a database, proceed...
 
-    $first_name = ucwords($first_name);
-    ucwords($last_name);
 
     $sql = "INSERT INTO logininfo (first_name, last_name, email, password) "
             . "VALUES ('$first_name','$last_name','$email','$password')";

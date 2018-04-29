@@ -32,24 +32,24 @@ else {
 <body>
   <div class ="container">
     <div class="row">
-      <div class="col-md-5">
-          <img class="img-fluid" alt="Responsive image" src="style/css/images/feel.png"  />
+      <div class="col-md-4">
+          <img class="img-fluid" alt="Responsive image" src="style/css/images/feel.png" width="75" height="75" />
       </div>
-      <div class= "col-md-3">
+      <div class= "col-md-4">
           <form method="POST" action="upload.php" enctype="multipart/form-data">
 		<label for="file"> Pick a file :  </label>
 		<input type="file" name ="file">
 		<input type="submit" value = "Upload">
 	</form>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" id="nameplate">
 
-          <h1><?php echo $first_name.' '.$last_name; ?></h1>
-          <p><?= $email ?></p>
-          <h4>Instagram</h4>
-          <h4>University Name</h4>
-          <h4>Year in School</h4>
+          <h1><?php echo $first_name.' '.$last_name; ?> <h4><?= $email ?></h4></h1>
 
+          <h6>Add events you have attended using the 'Add Event' tab below. Press
+          the 'Find Request' tab to find a person you liked from the events you have attended.
+          Click 'View Matches' to see the people we matched you with based on the information you
+          provided. </h6>
           <a href="logout.php"><button class="button button-block" name="logout"/>Log Out</button></a>
 
       </div>
@@ -58,63 +58,192 @@ else {
       <div class="col-md-12">
             <ul class="nav nav-tabs" role="tablist">
               <li class="nav-item">
-                <a class="nav-link" href="mymatches.php" role="tab" data-toggle="tab">My Matches</a>
+                <a class="nav-link" href="#addevent" role="tab" data-toggle="tab">Add Event</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#findnewmatches" role="tab" data-toggle="tab">Find New Matches</a>
+                <a class="nav-link" href="#findmatch" role="tab" data-toggle="tab">Find Match</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#mymatches" role="tab" data-toggle="tab">My Matches</a>
               </li>
             </ul>
             <!--*** TABBED CONTENT *** -->
-            <div class = "tab-content" class>
+      <div class = "tab-content" class>
 
-            <!--*** My Matches *** -->
-            <!--<div role="tabpanel" class="tab-pane fade in active" id = "mymatches">
-            <ul>
+      <!--*** ADD EVENT PANEL *** -->
+      <div role="tabpanel"  class="tab-pane fade in active" id="addevent">
+      </br>
+      <h5>Put in as much information as possible. </br> Anything that does not apply leave blank.</h5>
 
-      <!--*** Find New Matches Panel *** -->
+      <form action="profile.php" method="post" autocomplete="off"></br>
+      <h1>Event Information:</h1>
+
+      <div class = "form-group">
+        <label  for = "eventname">
+          Event Name:
+        </label>
+      <div class="col-5">
+        <input type = "text" name = "eventname" class = "form-control" id = "eventname" />
+      </div>
+      </div>
+
+      <div class="form-group">
+        <label for="date" class="col-2 col-form-label">Date</label>
+        <div class="col-5">
+          <input class="form-control" type="date" value="2011-08-19" id="date">
+        </div>
+      </div>
+
+      <div class = "form-group"  >
+        <label for = "eventtype">
+          What type of event?
+        </label>
+        <div class = "col-5">
+        <select type = "text" name = "eventtype" class = "form-control"
+        id = "eventtype"/>
+          <option>Party</option>
+          <option>Club event</option>
+          <option>Protest/Rally</option>
+          <option>Hackathon</option>
+          <option>Convention</option>
+          <option>Career Fair</option>
+          <option>Concert</option>
+          <option>Sporting Event</option>
+          <option>Other</option>
+        </select>
+        </div>
+      </div>
+
+      <div class = "form-group">
+        <label  for = "locationdescription">
+          Location Description:
+        </label>
+      <div class="col-5">
+        <textarea type = "text" name = "eventname" class = "form-control" id = "eventname" rows ="3"> </textarea>
+      </div>
+      </div>
+
+      <div class = "form-group">
+        <label  for = "additionalinfo">
+          Any additional info about event:
+        </label>
+      <div class="col-5">
+        <textarea type = "text" name = "additionalinfo" class = "form-control" id = "additionalinfo" rows ="3"> </textarea>
+      </div>
+      </div>
 
 
-            <div role="tabpanel" class="col-md-6" class="tab-pane fade in active" id="findnewmatches">
-            <h1>Their Information</h1>
-            <form action="profile.php" method="post" autocomplete="off">
+      <h1>Personal Information:</h1>
+      <div class = "form-group">
+        <label  for = "nickname">
+          Nickname:
+        </label>
+        <div class = "col-5">
+        <input type = "text" name = "nickname" class = "form-control" id = "nickname" />
+        </div>
+      </div>
 
-            Name:<br>
-            <input type="text" name="tname" placeholder="Name">
-            <br>
-            Nickname:<br>
-            <input type="text" name="tnickname" placeholder="Nickname">
-            <br>
-            Major:<br>
-            <input type="text" name="tmajor" placeholder="Major">
-            <br>
-            Location<br>
-            <select name="tlocationone">
-            <option value="tparty">Party</option>
-            <option value="tclass">Class</option>
-            <option value="tother">Other</option>
-            </select>
-            <br>
-            Where (What class, restaurant, party ect.):<br>
+      <div class = "form-group"  >
+        <label for = "hat">
+          Wearing a Hat?
+        </label>
+        <div class = "col-5">
+        <select type = "text" name = "hat" class = "form-control" id = "hat" />
+          <option>yes</option>
+          <option>no</option>
+        </select>
+        </div>
+      </div>
 
-            <input type="text" name="tlocationtwo" >
-            <br>
-            Where (Misc Info):<br>
-            <input type="text" name="tlocationthree" >
-            <br>
+      <div class = "form-group"  >
+        <label for = "glasses">
+          Wearing glasses?
+        </label>
+        <div class = "col-5">
+        <select type = "text" name = "glasses" class = "form-control"
+        id = "glasses" placeholder = "glasses"/>
+          <option>yes</option>
+          <option>no</option>
+        </select>
+        </div>
+      </div>
 
-            Day Met (mm-dd-yy):<br>
-            <input type="text" name="tdate" >
-            <br>
+      <div class = "form-group"  >
+        <label for = "hair">
+          How did you wear your hair?
+        </label>
+        <div class = "col-5">
+        <select type = "text" name = "hair" class = "form-control"
+        id = "hair" placeholder = "hair"/>
+          <option>Ponytail</option>
+          <option>Bun</option>
+          <option>Down:Above Shoulders</option>
+          <option>Down:Below Shoulders</option>
+        </select>
+        </div>
+      </div>
 
-            Phone (###-###-####):<br>
-            <input type="text" name="tphone" >
-            <br>
-            <input type="submit" value="Submit">
-            <br>
-            </form>
-            </div>
+      <div class = "form-group"  >
+        <label for = "haircolor">
+          What color was your hair?
+        </label>
+        <div class = "col-5">
+        <select type = "text" name = "hair" class = "form-control"
+        id = "hair" placeholder = "hair"/>
+          <option>Bonde</option>
+          <option>Brunette</option>
+          <option>Black</option>
+          <option>Red</option>
+          <option>Unnatral</option>
+        </select>
+        </div>
+      </div>
 
+      <div class = "form-group"  >
+        <label for = "shirt">
+          What kind of shirt were you wearing?
+        </label>
+        <div class = "col-5">
+        <select type = "text" name = "shirt" class = "form-control"
+        id = "shirt" placeholder = "shirt"/>
+          <option>T-shirt</option>
+          <option>Blouse</option>
+          <option>Suit</option>
+          <option>Dress</option>
+          <option>Pollo</option>
+          <option>Tank Top</option>
+          <option>Long Sleeve</option>
+          <option>Costume</option>
+        </select>
+        </div>
+      </div>
+
+      <div class = "form-group"  >
+        <label for = "shirtcolor">
+          What kind of shirt were you wearing?
+        </label>
+        <div class = "col-5">
+        <select type = "text" name = "shirtcolor" class = "form-control"
+        id = "shirtcolor" placeholder = "shirtcolor"/>
+          <option>Black</option>
+          <option>Brown</option>
+          <option>White/Grey</option>
+          <option>Purple</option>
+          <option>Red</option>
+          <option>Blue</option>
+          <option>Green</option>
+          <option>Yellow</option>
+          <option>Purple</option>
+          <option>Pink</option>
+          <option>Patterned</option>
+        </select>
+        </div>
+      </div>
+      <button type="submit" name ="addevent" class = "btn btn-info">
+        Add
+      </button>
     </div>
+<!-- END OF ADD EVENT PANEL -->
   </div>
 </div>
 </div>
