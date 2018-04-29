@@ -1,7 +1,7 @@
 
   body {
 
-    background-image: url("background.png");
+    background-image: url("./images/background.png");
     background-size: cover;
 
   }
@@ -54,5 +54,3 @@
   .container{
     margin-left: 0px;
   }
-
-

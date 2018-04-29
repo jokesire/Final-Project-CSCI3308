@@ -1,8 +1,8 @@
 <?php
-if(!isset($_SESSION)) 
+if(!isset($_SESSION))
     {
       ob_start();
-      session_start(); 
+      session_start();
     }
 require 'db.php';
 ?>
@@ -14,11 +14,11 @@ require 'db.php';
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="style/css/main.css" />
     <!--<link rel="stylesheet" href="style.css">-->
 
     <title>Sign-Up/Login Form </title>
-    <?php include 'css/css.html'; ?>
+    <?php include 'style/css/css.html'; ?>
   </head>
 
   <?php
@@ -46,7 +46,7 @@ require 'db.php';
 	  	<div class="col-md-5">
 
 
-          <img class="img-fluid" alt="Responsive image" src="feel.png"  />
+          <img class="img-fluid" alt="Responsive image" src="style/css/images/feel.png"  />
       </div>
       <div class="col-md-7">
           <p>

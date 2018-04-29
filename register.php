@@ -13,8 +13,8 @@ $_SESSION['last_name'] = $_POST['lastname'];
 // Escape all $_POST variables to protect against SQL injections
 //http://php.net/manual/en/mysqli.construct.php
 //http://php.net/manual/en/mysqli.real-escape-string.php
-$first_name = $mysqli->real_escape_string($_POST['firstname']);
-$last_name = $mysqli->real_escape_string($_POST['lastname']);
+$first_name = ucwords($mysqli->real_escape_string($_POST['firstname']));
+$last_name = ucwords($mysqli->real_escape_string($_POST['lastname']));
 $email = $mysqli->real_escape_string($_POST['email']);
 $password = $mysqli->real_escape_string($_POST['password']);
 
@@ -32,6 +32,8 @@ if ( $result->num_rows > 0 ) {
 }
 else { // Email doesn't already exist in a database, proceed...
 
+    $first_name = ucwords($first_name);
+    ucwords($last_name);
 
     $sql = "INSERT INTO logininfo (first_name, last_name, email, password) "
             . "VALUES ('$first_name','$last_name','$email','$password')";
@@ -39,7 +41,7 @@ else { // Email doesn't already exist in a database, proceed...
     // Add user to the database
     if ( $mysqli->query($sql) ){
         $_SESSION['logged_in'] = true;
-        header("location: profilesetup.php");
+        header("location: profile.php");
     }
 
     else {

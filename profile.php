@@ -1,8 +1,8 @@
 <?php
-if(!isset($_SESSION)) 
+if(!isset($_SESSION))
     {
       ob_start();
-      session_start(); 
+      session_start();
     }
 /* I want this to be the place where a new database is made
 containing more personalized information, avatars and connnections */
@@ -13,8 +13,8 @@ if ( $_SESSION['logged_in'] != 1 ) {
 }
 else {
     // Makes it easier to read
-    $first_name = $_SESSION['first_name'];
-    $last_name = $_SESSION['last_name'];
+    $first_name = ucwords($_SESSION['first_name']);
+    $last_name = ucwords($_SESSION['last_name']);
     $email = $_SESSION['email'];
 }
 ?>
@@ -24,23 +24,21 @@ else {
   <meta charset="UTF-8">
   <title>Welcome <?= $first_name.' '.$last_name ?></title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"crossorigin="anonymous">
-  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="style/css/main.css" />
 
-  <?php include 'css/css.html'; ?>
+  <?php include 'style/css/css.html'; ?>
 </head>
 
 <body>
   <div class ="container">
     <div class="row">
       <div class="col-md-5">
-
-
-          <img class="img-fluid" alt="Responsive image" src="feel.png"  />
+          <img class="img-fluid" alt="Responsive image" src="style/css/images/feel.png"  />
       </div>
       <div class= "col-md-3">
           <form method="POST" action="upload.php" enctype="multipart/form-data">
 		<label for="file"> Pick a file :  </label>
-		<input type="file" name ="file"> 
+		<input type="file" name ="file">
 		<input type="submit" value = "Upload">
 	</form>
       </div>
