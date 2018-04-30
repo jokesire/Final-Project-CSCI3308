@@ -39,17 +39,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
     }
 
-    elseif (isset($_POST['findmatch'])) { //user registering
+    if (isset($_POST['findmatch'])) { //user registering
+       
+      
+        require 'matching.php';
 
-        require 'findmatches.php';
-
-    }
-
-    elseif (isset($_POST['mymatches'])) { //user registering
-
-        require 'mymatches.php';
 
     }
+
+   // if (isset($_POST['mymatches'])) { //user registering
+
+  //      require 'matching.php';
+//
+ //   }
 
 }
 
@@ -104,8 +106,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             <!--*** TABBED CONTENT *** -->
       <div class = "tab-content" class>
 
+	 <div role="tabpanel"  class="tab-pane fade in active" id="mymatches"> 
+	  <h1> Your Matches </h1>
+	  <?php 
+
+	$result = $mysqli->query("SELECT * FROM matches WHERE Email1='$email'");
+			?>
+
+<br>
+<br>
+	<table cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <th >Their Email</th><th>Their Name</th>
+  </tr>
+<?php while($row = $result->fetch_assoc() ){
+
+
+
+
+
+	?>
+
+	 <tr>
+    <td style='width: 150px;'><?php echo $row['Email2']; ?></td><td style='width: 150px;'><?php echo $row['User2']; ?></td><td style='width: 150px;'></td>
+  </tr>
+
+	<?php }
+			?>
+	</table>
+			</div>
+
       <!--*** ADD EVENT PANEL *** -->
-      <div role="tabpanel"  class="tab-pane fade show active" id="addevent">
+      <div role="tabpanel"  class="tab-pane fade in active" id="addevent">
       </br>
       <h5>Put in as much information as possible. </br> Anything that does not apply leave blank.</h5>
 
@@ -129,6 +161,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         <input type = "text" name = "eventname" class = "form-control" id = "eventname" />
       </div>
       </div>
+
+	  
+
 
       <div class="form-group">
         <label for="date" class="col-2 col-form-label">Date</label>
@@ -295,17 +330,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 <form action="profile.php" method="post" autocomplete="off"></br>
 <h1>Select which Event you met person!</h1>
+
+ <div class = "col-5">
+    <select type = "text" name = "eventid" class = "form-control"
+        id = "eventid"/>
+<?php 
+
+$id = $mysqli->query("SELECT * FROM myevents WHERE email = '$email';");
+$num = 0;
+
+while($row = $id->fetch_assoc() ){
+  
+  ?>
+<option> <?php echo $row['eventname'];?> </option>;
 <?php
-$sql = "SELECT PcID FROM PC";
-$result = mysql_query($sql);
-
-echo "<select name='PcID'>";
-while ($row = mysql_fetch_array($result)) {
-    echo "<option value='" . $row['PcID'] . "'>" . $row['PcID'] . "</option>";
 }
-echo "</select>";
-
 ?>
+</select>
+<div/>
 
 
 <h1>Their Information:</h1>
@@ -314,16 +356,16 @@ echo "</select>";
     Do you know their firstname:
   </label>
   <div class = "col-5">
-  <input type = "text" name = "nickname" class = "form-control" id = "nickname" />
+  <input type = "text" name = "firstname" class = "form-control" id = "firstname" />
   </div>
 </div>
 
 <div class = "form-group">
-  <label  for = "nickname">
+  <label  for = "lastname">
     Did you know their lastname:
   </label>
   <div class = "col-5">
-  <input type = "text" name = "nickname" class = "form-control" id = "nickname" />
+  <input type = "text" name = "lastname" class = "form-control" id = "lastname" />
   </div>
 </div>
 
@@ -381,8 +423,8 @@ echo "</select>";
     What color was their hair?
   </label>
   <div class = "col-5">
-  <select type = "text" name = "hair" class = "form-control"
-  id = "hair" placeholder = "hair"/>
+  <select type = "text" name = "haircolor" class = "form-control"
+  id = "haircolor" placeholder = "hair"/>
     <option>Blonde</option>
     <option>Brunette</option>
     <option>Black</option>
@@ -432,7 +474,7 @@ echo "</select>";
   </select>
   </div>
 </div>
-<button type="submit" name ="addevent" class = "btn btn-info">
+<button type="submit" name ="findmatch" class = "btn btn-info">
   Add Event
 </button>
 </div>

@@ -5,10 +5,10 @@
 	$email = $_SESSION['email'];
 
 
-  $mysqli = mysqli_connect('localhost','root','Qn9tvCerg4xxfqpn','test');
 
 
-	$result = $mysqli->query("SELECT * FROM SelfInformation WHERE email='$email'");
+
+	$result = $mysqli->query("SELECT * FROM activesearches WHERE email='$email'");
 
 	?>
 	<h1>Your Submitted Matches</h1>
@@ -33,7 +33,7 @@
 
 	<?php }
 
-	$result = $mysqli->query("SELECT * FROM FoundMatches WHERE email0='$email'");
+	$result = $mysqli->query("SELECT * FROM matches WHERE email0='$email'");
 			?>
 
 <br>
