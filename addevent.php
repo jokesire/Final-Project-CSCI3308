@@ -1,5 +1,5 @@
 <?php
-$_SESSION['email'] = $_POST['email'];
+$email = $_SESSION['email'];
 $_SESSION['firstname'] = $_POST['firstname'];
 $_SESSION['lastname'] = $_POST['lastname'];
 $_SESSION['eventname'] = $_POST['eventname'];
@@ -28,7 +28,6 @@ $_SESSION['shirtcolor'] = $_POST['shirtcolor'];
 //http://php.net/manual/en/mysqli.real-escape-string.php
 $firstname = $mysqli->real_escape_string($_POST['firstname']);
 $lastname = $mysqli->real_escape_string($_POST['lastname']);
-$email = $mysqli->real_escape_string($_POST['email']);
 $eventname = $mysqli->real_escape_string($_POST['eventname']);
 $date = $mysqli->real_escape_string($_POST['date']) ;
 $eventtype =  $mysqli->real_escape_string($_POST['eventtype']);

@@ -117,12 +117,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
       </div>
 
       <div class = "form-group">
-        <input  type = "hidden" name = "lastname" class = "form-control" id = "lastname" value = "<?php echo htmlspecialchars($last_name); ?>" />
+        <input  type = "hidden" name = "lastname" class = "form-control" id = "lastname" value = "<?php  echo htmlspecialchars($last_name); ?>" />
       </div>
 
-      <div class = "form-group">
-        <input  type = "hidden" name = "email" class = "form-control" id = "email" value = "<?php htmlspecialchars($email) ;?>" />
-      </div>
 
       <div class = "form-group">
         <label  for = "eventname">
@@ -136,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
       <div class="form-group">
         <label for="date" class="col-2 col-form-label">Date</label>
         <div class="col-5">
-          <input class="form-control" name="date" type="date" value="2011-08-19" id="date">
+          <input class="form-control" name="date" type="date" value="2011-08-19" id="date"/>
         </div>
       </div>
 
@@ -185,7 +182,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
           Nickname:
         </label>
         <div class = "col-5">
-        <input type = "text" name = "nickname" class = "form-control" id = "nickname" >
+        <input type = "text" name = "nickname" class = "form-control" id = "nickname" />
         </div>
       </div>
 
@@ -298,7 +295,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 <form action="profile.php" method="post" autocomplete="off"></br>
 <h1>Select which Event you met person!</h1>
+<?php
+$sql = "SELECT PcID FROM PC";
+$result = mysql_query($sql);
 
+echo "<select name='PcID'>";
+while ($row = mysql_fetch_array($result)) {
+    echo "<option value='" . $row['PcID'] . "'>" . $row['PcID'] . "</option>";
+}
+echo "</select>";
+
+?>
 
 
 <h1>Their Information:</h1>
