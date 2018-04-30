@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
       <div class = "tab-content" class>
 
       <!--*** ADD EVENT PANEL *** -->
-      <div role="tabpanel"  class="tab-pane fade in active" id="addevent">
+      <div role="tabpanel"  class="tab-pane fade show active" id="addevent">
       </br>
       <h5>Put in as much information as possible. </br> Anything that does not apply leave blank.</h5>
 

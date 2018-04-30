@@ -42,7 +42,7 @@ require 'db.php';
 
     <!-- insert your code here -->
   <div class="container">
-  	<div class="row h-100">
+  	<div class="row ">
 	  	<div class="col-md-5">
 
 
@@ -68,12 +68,12 @@ require 'db.php';
             </ul>
 
             <!--*** TABBED CONTENT *** -->
-            <div class = "tab-content">
+            <div class = "tab-content col-md-6">
 
             <!--*** LOGIN PANEL *** -->
-            <div role="tabpanel" class="tab-pane fade in active" id = "login">
+            <div role="tabpanel" class="tab-pane fade show active " id = "login">
 
-                <h1>Welcome Back!</h1>
+            </br><h1>Welcome Back!</h1>
             <form action="homepage.php" method= "post" autocomplete="off">
 
             <div class="form-group">
@@ -99,7 +99,7 @@ require 'db.php';
 
       <!--*** SIGN-UP PANEL *** -->
       <div role="tabpanel" class="tab-pane fade in active" id="signup">
-        <h1>Sign Up for Free</h1>
+      </br><h1>Sign Up for Free</h1>
 
         <form action="homepage.php" method="post" autocomplete="off">
 
@@ -107,8 +107,10 @@ require 'db.php';
           <label class = "sr-only" for = "firstname">
             First Name<span class ="req">*</span>
           </label>
+
           <input type = "text" name = "firstname" class = "form-control"
                  id = "firstname" placeholder = "First Name"/>
+
         </div>
 
         <div class = "form-group">
