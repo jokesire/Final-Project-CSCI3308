@@ -70,15 +70,29 @@ if ( $result->num_rows > 0 ){
 			$score = $score + 1;
 		}
 		if($value6 == $row['locationdescription']){
-		//	$score = $score + 1;
+		    $score = $score + 1;
 		}
 		if($value8 == $row['hat']){
-		//	$score = $score + 1;
+		    $score = $score + 1;
 		}
 		if($value9 == $row['glasses']){
-		//	$score = $score + 1;
+		    $score = $score + 1;
 		}
-		if($score > 1){
+		if( $value10 == $row['hair']){
+			 $score = $score + 1;
+		}
+		if( $tvalue3 == $row['haircolor']){
+			 $score = $score + 1;
+		}
+		if( $tvalue4 == $row['shirt']){
+			 $score = $score + 1;
+		}
+		if( $tvalue5 == $row['shirtcolor']){
+			 $score = $score + 1;
+		}
+	
+
+		if($score > 4){
 			$score = 0;
 			$dat = $row['date'];
 			$res = $mysqli->query("SELECT * FROM activesearches WHERE date = '$dat';");
@@ -101,12 +115,24 @@ if ( $result->num_rows > 0 ){
 				}
 
 				if( $myhat == $trow['hat']){
-					//$score = $score + 1;
+					 $score = $score + 1;
 				}
 				if( $myglasses == $trow['glasses']){
-					// $score = $score + 1;
+					 $score = $score + 1;
 				}
-				if($score > 2){
+				if( $myhair == $row['hair']){
+					 $score = $score + 1;
+				}
+				if( $myhaircolor == $row['haircolor']){
+					 $score = $score + 1;
+				}
+				if( $myshirt == $row['shirt']){
+					 $score = $score + 1;
+				}
+				if( $myshirtcolor == $row['shirtcolor']){
+					 $score = $score + 1;
+				}
+				if($score > 4){
 					$email1 = $row['email'];
 					$tname = $value1;
 					if($email1 != $email){
